@@ -208,14 +208,14 @@ void Widget::replyFinished(QNetworkReply *reply)
         {
             this->hide();
             system("run_ump.vbs");
-            QProcess::startDetached("SPPserver.exe");
+            QProcess::startDetached("SPPServer.exe");
         }
     }
     else
     {
         this->hide();
         system("run_ump.vbs");
-        QProcess::startDetached("SPPserver.exe");
+        QProcess::startDetached("SPPServer.exe");
         //p.execute("start_ump.bat");
         //p.waitForFinished();
     }
@@ -251,8 +251,8 @@ void Widget::httpReadyRead()//有可用数据
 void Widget::updateDataReadProgress(qint64 read, qint64 total)
 {
     //qDebug()<<"55555555555555"<<"111:"<<read<<"222:"<<total;
-    ui->progressBar->setMaximum(total); //最大值
-    ui->progressBar->setValue(read);  //当前值
+    //ui->progressBar->setMaximum(total); //最大值
+    //ui->progressBar->setValue(read);  //当前值
 }
 void Widget::httpFinished()  //完成下载
 {
@@ -292,7 +292,7 @@ void Widget::httpFinished()  //完成下载
 
     system("run_ump.vbs");
     //p.waitForFinished();
-    QProcess::startDetached("SPPserver.exe");
+    QProcess::startDetached("SPPServer.exe");
     /*if(isExit==true) qApp->quit(); else this->hide();*/
 }
 Widget::~Widget()
